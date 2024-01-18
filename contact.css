@@ -1,0 +1,43 @@
+.ul{
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.ul li{
+    list-style: none;
+    margin-left: 62px;
+    margin-top: 27px;
+    font-size: 14px;
+
+
+}
+.h1 ul li a{
+    color: white;
+    text-decoration: none;
+    font-family: Arial;
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+    
+
+}
+
+
+
+
+
+.ul li a:hover{
+    color: purple;
+
+
+
+}
+.con{
+
+    height: 400px;
+    width: 400px;
+    }
+    
