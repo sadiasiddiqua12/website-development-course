@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Guess the Number Game</h1>
+
+    <label for="guessInput">Enter your guess (1-10):</label>
+    <input type="number" id="guessInput" min="1" max="10" step="1" placeholder="Enter number">
+    <button onclick="checkGuess()">Submit</button>
+
+    <div class="result" id="guessResult"></div>
+
+    <script>
+        // Store the secret number
+        const secretNumber = Math.floor(Math.random() * 10) + 1;
+
+        function checkGuess() {
+            // Get the user's guess from the input field
+            const userGuess = parseInt(document.getElementById('guessInput').value);
+
+            // Initialize the result message
+            let resultMessage;
+
+            // Check if the guess is correct
+            if (userGuess === secretNumber) {
+                resultMessage = 'Bingo! Correct answer';
+            } else if (userGuess === secretNumber + 1 || userGuess === secretNumber - 1) {
+                resultMessage = 'Close enough to the correct answer';
+            } else {
+                resultMessage = `Sorry, the correct answer was ${secretNumber}. Try again!`;
+            }
+
+            // Display the result message
+            document.getElementById('guessResult').innerText = resultMessage;
+        }
+    </script>
+
+</body>
+</html>

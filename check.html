@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divisibility Check</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Check Divisibility by 3</h1>
+
+    <label for="numberInput">Enter a number:</label>
+    <input type="number" id="numberInput" placeholder="Enter number">
+    <button onclick="checkDivisibility()">Check</button>
+
+    <div class="result" id="resultMessage"></div>
+
+    <script>
+        function checkDivisibility() {
+            // Get the user's input from the input field
+            const number = parseInt(document.getElementById('numberInput').value);
+
+            // Initialize the result message
+            let resultMessage;
+
+            // Check if the number is divisible by 3
+            if (number % 3 === 0) {
+                resultMessage = `Yes, ${number} is divisible by 3.`;
+            } else {
+                resultMessage = `No, ${number} is not divisible by 3.`;
+            }
+
+            // Display the result message
+            document.getElementById('resultMessage').innerText = resultMessage;
+        }
+    </script>
+
+</body>
+</html>

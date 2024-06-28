@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Message</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .result {
+            margin-top: 10px;
+            font-size: 1.2em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>City Welcome Message</h1>
+
+    <label for="cityInput">Enter a city name:</label>
+    <input type="text" id="cityInput" placeholder="Enter city name">
+    <button onclick="welcomeUser()">Submit</button>
+
+    <div class="result" id="welcomeMessage"></div>
+
+    <script>
+        function welcomeUser() {
+            // Get the city name from the input field
+            const city = document.getElementById('cityInput').value.trim();
+
+            // Check if the city is Karachi
+            let message;
+            if (city.toLowerCase() === 'karachi') {
+                message = 'Welcome to the city of lights!';
+            } else {
+                message = `Welcome to ${city}!`;
+            }
+
+            // Display the welcome message
+            document.getElementById('welcomeMessage').innerText = message;
+        }
+    </script>
+
+</body>
+</html>

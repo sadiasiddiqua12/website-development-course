@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gender Based Greeting</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .result {
+            margin-top: 10px;
+            font-size: 1.2em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Gender Based Greeting</h1>
+
+    <label for="genderInput">Enter your gender (male/female):</label>
+    <input type="text" id="genderInput" placeholder="Enter gender">
+    <button onclick="greetUser()">Submit</button>
+
+    <div class="result" id="greetingMessage"></div>
+
+    <script>
+        function greetUser() {
+            // Get the gender from the input field
+            const gender = document.getElementById('genderInput').value.trim().toLowerCase();
+
+            // Initialize the greeting message
+            let message;
+            
+            // Determine the greeting based on the gender
+            if (gender === 'male') {
+                message = 'Good Morning Sir.';
+            } else if (gender === 'female') {
+                message = 'Good Morning Ma’am.';
+            } else {
+                message = 'Please enter a valid gender (male or female).';
+            }
+
+            // Display the greeting message
+            document.getElementById('greetingMessage').innerText = message;
+        }
+    </script>
+
+</body>
+</html>
