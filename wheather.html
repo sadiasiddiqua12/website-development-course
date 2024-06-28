@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Message</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    input[type="number"] {
+      padding: 8px;
+      font-size: 16px;
+      width: 100px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h2>Temperature Weather Checker</h2>
+  <label for="temperature">Enter temperature:</label>
+  <input type="number" id="temperature" name="temperature" min="-50" max="50" required>
+  <button onclick="checkWeather()">Check Weather</button>
+  <p id="weatherMessage"></p>
+
+  <script>
+    function checkWeather() {
+      let temperatureInput = document.getElementById("temperature").value;
+      let temperature = parseFloat(temperatureInput);
+
+      if (isNaN(temperature)) {
+        document.getElementById("weatherMessage").textContent = "Please enter a valid temperature.";
+      } else {
+        if (temperature > 40) {
+          document.getElementById("weatherMessage").textContent = "It is too hot outside.";
+        } else if (temperature > 30) {
+          document.getElementById("weatherMessage").textContent = "The Weather today is Normal.";
+        } else if (temperature > 20) {
+          document.getElementById("weatherMessage").textContent = "Today’s Weather is cool.";
+        } else if (temperature > 10) {
+          document.getElementById("weatherMessage").textContent = "OMG! Today’s weather is so Cool.";
+        } else {
+          document.getElementById("weatherMessage").textContent = "It's freezing cold out there!";
+        }
+      }
+    }
+  </script>
+</body>
+</html>
+
+
