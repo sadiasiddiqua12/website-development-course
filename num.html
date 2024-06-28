@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arithmetic Operations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .result {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Arithmetic Operations on a Number</h1>
+
+    <label for="numberInput">Enter a number:</label>
+    <input type="number" id="numberInput" value="10">
+    <button onclick="performArithmetic()">Calculate</button>
+
+    <div class="result" id="addition"></div>
+    <div class="result" id="subtraction"></div>
+    <div class="result" id="multiplication"></div>
+    <div class="result" id="division"></div>
+
+    <script>
+        function performArithmetic() {
+            // Get the number from the input field
+            const number = parseFloat(document.getElementById('numberInput').value);
+
+            // Perform arithmetic operations
+            const addition = number + 5;
+            const subtraction = number - 5;
+            const multiplication = number * 5;
+            const division = number / 5;
+
+            // Display the results
+            document.getElementById('addition').innerText = `Addition (number + 5): ${addition}`;
+            document.getElementById('subtraction').innerText = `Subtraction (number - 5): ${subtraction}`;
+            document.getElementById('multiplication').innerText = `Multiplication (number * 5): ${multiplication}`;
+            document.getElementById('division').innerText = `Division (number / 5): ${division}`;
+        }
+    </script>
+
+</body>
+</html>
