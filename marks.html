@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marks and Percentage Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f7f7f7;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            width: 300px;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #333;
+        }
+        .result table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .result table, .result th, .result td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        .result th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Marks and Percentage Calculator</h1>
+        <input type="text" id="subject1" placeholder="Enter Subject 1 Name">
+        <input type="number" id="marks1" placeholder="Enter Marks for Subject 1">
+        <input type="text" id="subject2" placeholder="Enter Subject 2 Name">
+        <input type="number" id="marks2" placeholder="Enter Marks for Subject 2">
+        <input type="text" id="subject3" placeholder="Enter Subject 3 Name">
+        <input type="number" id="marks3" placeholder="Enter Marks for Subject 3">
+        <button onclick="calculateResults()">Calculate Results</button>
+        <div class="result" id="resultOutput"></div>
+    </div>
+
+    <script>
+        function calculateResults() {
+            // Get subject names
+            var subject1 = document.getElementById("subject1").value.trim();
+            var subject2 = document.getElementById("subject2").value.trim();
+            var subject3 = document.getElementById("subject3").value.trim();
+
+            // Validate subject names
+            if (subject1 === "" || subject2 === "" || subject3 === "") {
+                alert("Please enter all subject names.");
+                return;
+            }
+
+            // Get obtained marks
+            var marks1 = parseInt(document.getElementById("marks1").value);
+            var marks2 = parseInt(document.getElementById("marks2").value);
+            var marks3 = parseInt(document.getElementById("marks3").value);
+
+            // Validate obtained marks
+            if (isNaN(marks1) || isNaN(marks2) || isNaN(marks3)) {
+                alert("Please enter valid marks for all subjects.");
+                return;
+            }
+
+            // Total marks and calculation
+            var totalMarks = 100;
+            var totalObtained = marks1 + marks2 + marks3;
+            var percentage = (totalObtained / (totalMarks * 3)) * 100;
+
+            // Display the results
+            var resultHTML = `
+                <h2>Results</h2>
+                <table>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Obtained Marks</th>
+                        <th>Total Marks</th>
+                    </tr>
+                    <tr>
+                        <td>${subject1}</td>
+                        <td>${marks1}</td>
+                        <td>${totalMarks}</td>
+                    </tr>
+                    <tr>
+                        <td>${subject2}</td>
+                        <td>${marks2}</td>
+                        <td>${totalMarks}</td>
+                    </tr>
+                    <tr>
+                        <td>${subject3}</td>
+                        <td>${marks3}</td>
+                        <td>${totalMarks}</td>
+                    </tr>
+                    <tr>
+                        <th>Total</th>
+                        <td>${totalObtained}</td>
+                        <td>${totalMarks * 3}</td>
+                    </tr>
+                    <tr>
+                        <th>Percentage</th>
+                        <td colspan="2">${percentage.toFixed(2)}%</td>
+                    </tr>
+                </table>
+            `;
+            document.getElementById("resultOutput").innerHTML = resultHTML;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Table</title>
+    <style>
+        body {
+            background-color: #ccc;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        input {
+            padding: 10px;
+            width: 80%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .table {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #333;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Multiplication Table</h1>
+        <input type="number" id="numberInput" placeholder="Enter a number (default is 5)">
+        <button onclick="displayTable()">Show Table</button>
+        <div class="table" id="tableOutput"></div>
+    </div>
+
+    <script>
+        function displayTable() {
+            // Get the input value
+            var number = document.getElementById("numberInput").value;
+
+            // Default to 5 if the input is empty or invalid
+            if (number === "" || isNaN(number)) {
+                number = 5;
+            } else {
+                number = parseInt(number);
+            }
+
+            // Generate the multiplication table
+            var tableHTML = `<h2>Multiplication Table of ${number}</h2>`;
+            tableHTML += "<table border='1' style='width:100%; border-collapse:collapse;'>";
+
+            for (var i = 1; i <= 10; i++) {
+                tableHTML += `<tr><td>${number} x ${i}</td><td>${number * i}</td></tr>`;
+            }
+
+            tableHTML += "</table>";
+
+            // Display the multiplication table
+            document.getElementById("tableOutput").innerHTML = tableHTML;
+        }
+
+        // Display default table on page load
+        window.onload = function() {
+            displayTable();
+        };
+    </script>
+</body>
+</html>

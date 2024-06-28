@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Variable Evaluation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .output {
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Variable Evaluation</h1>
+    <div class="output" id="output"></div>
+    <script>
+        // Step-by-step evaluation
+        var a = 2, b = 1;
+        var output = `Initial values: a = ${a}, b = ${b}<br>`;
+
+        // --a
+        --a;
+        output += `After --a: a = ${a}, b = ${b}<br>`;
+
+        // --a - --b
+        var step1 = --a - --b;
+        output += `After --a - --b: a = ${a}, b = ${b}, Result: ${step1}<br>`;
+
+        // --a - --b + ++b
+        var step2 = --a - --b + ++b;
+        output += `After --a - --b + ++b: a = ${a}, b = ${b}, Result: ${step2}<br>`;
+
+        // --a - --b + ++b + b--
+        var result = --a - --b + ++b + b--;
+        output += `After --a - --b + ++b + b--: a = ${a}, b = ${b}, Result: ${result}<br>`;
+
+        document.getElementById("output").innerHTML = output;
+
+        // Final values
+        console.log(`Final values: a = ${a}, b = ${b}, result = ${result}`);
+    </script>
+</body>
+</html>
