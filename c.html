@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert Messages</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Alert Messages Example</h1>
+        <button id="alertButton1">Show Alert 1</button>
+        <button id="alertButton2">Show Alert 2</button>
+        <button id="alertButton3">Show Alert 3</button>
+    </div>
+
+    <script>
+        document.getElementById("alertButton1").addEventListener("click", function() {
+            alert("This is Alert 1");
+        });
+
+        document.getElementById("alertButton2").addEventListener("click", function() {
+            alert("This is Alert 2");
+        });
+
+        document.getElementById("alertButton3").addEventListener("click", function() {
+            alert("This is Alert 3");
+        });
+    </script>
+</body>
+</html>

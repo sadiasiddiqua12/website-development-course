@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Content Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #content {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to My Web Page</h1>
+    <button id="displayButton">Display Content</button>
+    <div id="content"></div>
+
+    <script>
+        document.getElementById("displayButton").addEventListener("click", function() {
+    let contentDiv = document.getElementById("content");
+    let content = `
+        <h2>Hello, World!</h2>
+        <p>This is a simple example of displaying content using JavaScript.</p>
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+    `;
+    contentDiv.innerHTML = content;
+});
+
+
+
+    </script>
+</body>
+</html>

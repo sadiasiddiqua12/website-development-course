@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Page Visits</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #visitCount {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            display: inline-block;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to My Web Page</h1>
+    <div id="visitCount"></div>
+
+    <script>
+        // Get the visit count from localStorage
+        let visitCount = localStorage.getItem('visitCount');
+
+        // If visitCount is not available, initialize it
+        if (!visitCount) {
+            visitCount = 0;
+        }
+
+        // Increment the visit count
+        visitCount++;
+
+        // Store the updated visit count in localStorage
+        localStorage.setItem('visitCount', visitCount);
+
+        // Display the visit count
+        document.getElementById('visitCount').textContent = 
+            "You have visited this site " + visitCount + " times.";
+    </script>
+</body>
+</html>

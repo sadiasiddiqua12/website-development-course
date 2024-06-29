@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birth Year Display</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #message {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            display: inline-block;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Birth Year Display</h1>
+    <div id="message"></div>
+
+    <script>
+        // Declare a variable and assign your birth year to it
+        let birthYear = 1990; // Replace 1990 with your actual birth year
+
+        // Create the message
+        let message = "Your birth year is " + birthYear;
+
+        // Display the message in the browser
+        document.getElementById('message').textContent = message;
+    </script>
+</body>
+</html>

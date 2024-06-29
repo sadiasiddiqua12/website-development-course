@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display String Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #content {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            font-size: 24px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Display Special String</h1>
+    <button id="displayButton">Show String</button>
+    <div id="content"></div>
+
+    <script>
+        // Store the string in a variable
+        let specialString = "▬▬▬▬▬▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬▬▬▬▬▬";
+
+        // Function to display the string
+        document.getElementById("displayButton").addEventListener("click", function() {
+            // Show in alert
+            alert(specialString);
+
+            // Show in browser
+            let contentDiv = document.getElementById("content");
+            contentDiv.textContent = specialString;
+        });
+    </script>
+</body>
+</html>

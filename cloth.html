@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Summary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #orderMessage {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            display: inline-block;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>XYZ Clothing Store</h1>
+    <div id="orderMessage"></div>
+
+    <script>
+        // Store the visitor's name, product title, and quantity in variables
+        let visitorName = "faraz";        // Replace with the actual visitor's name
+        let productTitle = "T-shirt";        // Replace with the actual product title
+        let quantity = 5;                    // Replace with the actual quantity
+
+        // Create the message
+        let orderMessage = `${visitorName} ordered ${quantity} ${productTitle}(s) on XYZ Clothing store`;
+
+        // Display the message in the browser
+        document.getElementById('orderMessage').textContent = orderMessage;
+    </script>
+</body>
+</html>

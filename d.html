@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alert Example</title>
+  <style>
+    /* CSS styles for the alert */
+    .alert {
+      padding: 15px;
+      background-color: #f44336; /* Red background color */
+      color: white; /* White text color */
+      font-size: 16px;
+      text-align: center;
+      position: fixed; /* Fixed position to stay on top */
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%; /* Adjust width as needed */
+      z-index: 1000; /* Ensure it's on top of other elements */
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Optional: Add shadow for depth */
+    }
+
+    /* Example of different alert styles */
+    .alert.success {
+      background-color: #4CAF50; /* Green background color */
+    }
+
+    .alert.warning {
+      background-color: #ff9800; /* Orange background color */
+    }
+
+    .alert.info {
+      background-color: #2196F3; /* Blue background color */
+    }
+
+    /* CSS for the close button */
+    .closebtn {
+      margin-left: 15px;
+      color: white;
+      font-weight: bold;
+      float: right;
+      font-size: 22px;
+      line-height: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .closebtn:hover {
+      color: black;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Alert box with a close button -->
+<div class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  This is a dismissible alert!
+</div>
+
+<!-- Example of different styled alerts -->
+<div class="alert success">
+  Success! Your action was completed.
+</div>
+
+<div class="alert warning">
+  Warning! Proceed with caution.
+</div>
+
+<div class="alert info">
+  Information: Please read this message.
+</div>
+
+</body>
+</html>

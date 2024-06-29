@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sequential Messages</title>
+    <script>
+    // Function to display messages sequentially
+function displayMessages() {
+    // First message
+    setTimeout(function() {
+        alert("First message");
+    }, 1000); // Delay in milliseconds (1000ms = 1 second)
+
+    // Second message (displayed after 2 seconds)
+    setTimeout(function() {
+        alert("Second message");
+    }, 3000); // Adjust timing as needed
+
+    // Third message (displayed after 4 seconds)
+    setTimeout(function() {
+        alert("Third message");
+    }, 5000); // Adjust timing as needed
+}
+
+
+    </script>
+</head>
+<body>
+    <button onclick="displayMessages()">Display Messages</button>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal and Illegal Variable Names</title>
+</head>
+<body>
+    <h1>Legal and Illegal Variable Names</h1>
+    <div id="legalVariables"></div>
+    <div id="illegalVariables"></div>
+
+    <script>
+        // Legal variable names
+        let userName = "faraz";
+        let _age = 30;
+        let $price = 19.99;
+        let totalCount = 100;
+        let number123 = 456;
+
+        // Illegal variable names (commented out because they will cause errors)
+        // let 2cool4school = "Oops"; // Starts with a number
+        // let my-var = "Oops"; // Contains a hyphen
+        // let var = "Oops"; // Reserved keyword
+        // let user name = "Oops"; // Contains a space
+        // let true = "Oops"; // Reserved keyword
+
+        // Display legal variable names
+        document.getElementById('legalVariables').innerHTML = `
+            <h2>Legal Variables:</h2>
+            <ul>
+                <li>userName: ${faraz}</li>
+                <li>_age: ${30}</li>
+                <li>$price: ${19.99}</li>
+                <li>totalCount: ${100}</li>
+                <li>number123: ${456}</li>
+            </ul>
+        `;
+
+        // Display illegal variable names
+        document.getElementById('illegalVariables').innerHTML = `
+            <h2>Illegal Variables:</h2>
+            <ul>
+                <li>2cool4school: Starts with a number</li>
+                <li>my-var: Contains a hyphen</li>
+                <li>var: Reserved keyword</li>
+                <li>user name: Contains a space</li>
+                <li>true: Reserved keyword</li>
+            </ul>
+        `;
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Message Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Display Message Example</h1>
+        <button onclick="displayMessage()">Display Message</button>
+        <p class="message" id="messageDisplay"></p>
+    </div>
+
+    <script>
+        // JavaScript: script.js
+
+function displayMessage() {
+    var messageParagraph = document.getElementById("messageDisplay");
+    messageParagraph.textContent = "Hello, this is a dynamically displayed message!";
+}
+
+
+
+    </script>
+</body>
+</html>

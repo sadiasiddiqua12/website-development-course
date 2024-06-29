@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Summary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #orderMessage {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            display: inline-block;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>XYZ Clothing Store</h1>
+    <div id="orderMessage"></div>
+
+    <script>
+        // Declare 3 variables in one statement
+        let visitorName = "faraz", productTitle = "T-shirt", quantity = 5;
+
+        // Create the message
+        let orderMessage = `${visitorName} ordered ${quantity} ${productTitle}(s) on XYZ Clothing store`;
+
+        // Display the message in the browser
+        document.getElementById('orderMessage').textContent = orderMessage;
+    </script>
+</body>
+</html>
